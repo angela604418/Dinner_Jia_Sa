@@ -2,6 +2,7 @@
 
 [git learning note](https://hackmd.io/0qg8meZgTjO_f99ZRId5yg?both)
 
+**Deadline 2/7 Fri**
 
 - 晚餐吃什摩
     - 語言： Python
