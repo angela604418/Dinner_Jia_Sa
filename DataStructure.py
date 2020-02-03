@@ -41,7 +41,13 @@ class Dish:
     
     def addTag(self, tag):
         """ 新增標籤 """
-        self.__tags.append(tag)
+        if isinstance(tag, [list, tuple]):
+            for t in tag:
+                if t not in self.__tags:
+                    self.__tags.append(t)
+        else:
+            if tag not in self.__tags:
+                self.__tags.append(tag)
     
     # Get Function
     getDishName = lambda self : self.__dish_name
