@@ -41,7 +41,7 @@ class Dish:
     
     def addTag(self, tag):
         """ 新增標籤 """
-        if isinstance(tag, [list, tuple]):
+        if isinstance(tag, (list, tuple)):
             for t in tag:
                 if t not in self.__tags:
                     self.__tags.append(t)
@@ -53,6 +53,7 @@ class Dish:
     getDishName = lambda self : self.__dish_name
     getRestName = lambda self : self.__rest_name
     getTags     = lambda self : self.__tags
+    getAllAttrs = lambda self : [ self.__dish_name, self.__rest_name, self.__tags ]
     
     # Delete Tag
     def __rmSingleTag(self, tag):
@@ -81,39 +82,3 @@ class Dish:
         else:
             # 一次刪除一個標籤
             return self.__rmSingleTag(tag)
-            
-def Dish_Debug():
-    rice = Dish('蛋炒飯', '巷口那家', ['飯', '炒飯', '蛋炒飯'])
-    
-    print(rice.getDishName())
-    print(rice.getRestName())
-    print(rice.getTags())
-    
-    if '飯' in rice:
-        print()
-        print('有飯')
-    
-    print()
-    print('刪除 "蛋炒飯" 標籤')
-    if rice.rmTag('蛋炒飯'):
-        print(rice.getTags())
-    
-
-    rice.setDishName('炒麵')
-    rice.addTag('炒麵')
-    if rice.rmTag(['炒飯', '飯']):
-        print()
-        print(rice.getTags())
-        
-    print()
-    if rice.rmTag('義式料理'):
-        print('Yes')
-    else:
-        print('No')
-    
-    print()
-    print(rice)
-
-if __name__ == '__main__':
-    Dish_Debug()
-        
