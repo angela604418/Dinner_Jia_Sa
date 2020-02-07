@@ -16,4 +16,10 @@ class Item:
     print('You eat nothing tonight heehee')
   
  
- 
+#creating some data for testing
+Apple = Item('apple', 'Joy kitchen', 'fruit')
+Banana = Item('banana', 'Joy kitchen', 'fruit')
+
+Apple.hasTag('fruit')
+input_tags = ['fruit', 'rice']
+Banana.hasTag(input_tags)
