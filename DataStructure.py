@@ -5,9 +5,25 @@ Created on Mon Feb  3 09:32:02 2020
 @author: 劉又聖
 """
 
+tags_map = {
+    # 主食類標籤代碼對照
+    'main01' : '飯類',
+    'main02' : '麵類',
+    'main03' : '餃子類',
+    'main04' : '排餐類',
+    # 風格類標籤代碼對照
+    'type01' : '台式風格',
+    'type02' : '義式風格',
+    'type03' : '日式風格',
+    'type04' : '美式風格',
+    'type05' : '泰式風格',
+    'type06' : '韓式風格',
+}
+
 class Dish:
     """ 儲存一道菜所擁有的資訊 """
-    def __init__(self, dish_name, rest_name, tags=[]):
+    def __init__(self, ID, dish_name, rest_name, tags=[]):
+        self.__ID        = ID             # 菜色的唯一識別碼
         self.__dish_name = dish_name      # 菜色名稱
         self.__rest_name = rest_name      # 餐廳、店家名稱
         self.__tags      = tags           # 該菜色的標籤
@@ -31,29 +47,39 @@ class Dish:
         return True if tag in self.__tags else False
     
     # Set Function
+    def setID(self, value):
+        """ 設定菜色ID編號 """
+        if not isinstance(value, int):  raise TypeError('ID should be integer')
+        self.__ID = value
+
     def setDishName(self, value):
         """ 設定菜色名稱 """
+        if not isinstance(value, str):  raise TypeError('Dish name should be string')
         self.__dish_name = value
     
     def setRestName(self, value):
         """ 設定餐廳、店家名稱 """
+        if not isinstance(value, str):  raise TypeError('Restaurant name should be string')
         self.__rest_name = value
     
     def addTag(self, tag):
-        """ 新增標籤 """
+        """ 新增單一標籤傳入單一標籤代碼，新增多個標籤傳入list、tuple標籤代碼 """
+        # 新增多個標籤，使用list、tuple傳入
         if isinstance(tag, (list, tuple)):
             for t in tag:
                 if t not in self.__tags:
                     self.__tags.append(t)
+        # 新增單一標籤
         else:
             if tag not in self.__tags:
                 self.__tags.append(tag)
     
     # Get Function
+    getID       = lambda self : self.__ID
     getDishName = lambda self : self.__dish_name
     getRestName = lambda self : self.__rest_name
     getTags     = lambda self : self.__tags
-    getAllAttrs = lambda self : [ self.__dish_name, self.__rest_name, self.__tags ]
+    getAllAttrs = lambda self : [ self.__ID, self.__dish_name, self.__rest_name, self.__tags ]
     
     # Delete Tag
     def __rmSingleTag(self, tag):
