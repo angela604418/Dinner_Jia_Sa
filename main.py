@@ -5,18 +5,25 @@ Created on Mon Feb  3 09:31:28 2020
 @author: 劉又聖
 """
 
-from add_dish import Add_Dish
-from pick_dish import Pick_Dish
+from adddish import Add_Dish
+from pickdish import Pick_Dish
+from modifydish import Modify_Dish
+from deletedish import Delete_Dish
 
 def main():
-
+    prompt = 'input 1 for Add Dish, 2 for Pick Dish, ' + \
+             '3 for Modify Dish, 4 for Delete_Dish, Q for leave.\n>> '
     while True:
-        choice = input('input 1 for Add Dish, 2 for Pick Dish, Q for leave.\n>> ')
+        choice = input(prompt)
         
         if   choice == '1':
             Add_Dish()
         elif choice == '2':
             Pick_Dish()
+        elif choice == '3':
+            Modify_Dish()
+        elif choice == '4':
+            Delete_Dish()
         elif choice == 'Q':
             break
         else:
