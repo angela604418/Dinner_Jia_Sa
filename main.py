@@ -19,7 +19,12 @@ def main():
         if   choice == '1':
             Add_Dish()
         elif choice == '2':
-            Pick_Dish()
+            result = Pick_Dish()            
+            if result:
+                for dish in result:
+                    print(dish)
+            else:
+                print('No result')            
         elif choice == '3':
             Modify_Dish()
         elif choice == '4':
