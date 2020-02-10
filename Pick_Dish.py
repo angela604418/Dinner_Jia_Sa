@@ -39,5 +39,3 @@ for i in range(len(data)):
 #To see if output list stores the correct data
 for i in range(len(output)):
 	print(output[i])
-
-
