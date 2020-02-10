@@ -19,8 +19,6 @@ data.append(temp_1)
 data.append(temp_2)
 data.append(temp_3)
 
-#Store all output into a huge list
-output = []
 
 #To see if data stores things correctly
 for i in range(len(data)):
@@ -28,10 +26,14 @@ for i in range(len(data)):
 
 input_tags = ['main01', 'main03']
 
-for index in range(len(input_tags)):
-	for i in range(len(data)):			#run through every data 
+#Store all output into a huge list
+output = []
+
+for i in range(len(data)):
+	for index in range(len(input_tags)):			#run through every data 
 		if data[i].hasTag(input_tags[index]):
 			output.append(data[i])
+			break
 
 
 #To see if output list stores the correct data
