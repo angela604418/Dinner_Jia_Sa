@@ -18,10 +18,10 @@ data = []
 data.append(temp_1)
 data.append(temp_2)
 data.append(temp_3)
-'''
+
 #Store all output into a huge list
 output = []
-'''
+
 #To see if data stores things correctly
 for i in range(len(data)):
 	print(data[i])
@@ -33,9 +33,9 @@ for index in range(len(input_tags)):
 		if data[i].hasTag(input_tags[index]):
 			output.append(data[i])
 
-'''
+
 #To see if output list stores the correct data
 for i in range(len(output)):
 	print(output[i])
-'''
+
 
