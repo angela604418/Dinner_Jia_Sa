@@ -1,0 +1,4 @@
+[
+['good_rice', 'a', ['rice', 'chinese'] ],
+['b_rice', 'b', ['rice'] ],
+]
