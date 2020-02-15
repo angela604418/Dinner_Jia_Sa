@@ -36,6 +36,12 @@ def Get_Menu(menu_name='menu.txt'):
     Input,  menu_name, 這個我覺得不需要，可以再討論
     Output, result,    list of all dish
     """
+    infile = open(menu_name, "r", encoding='UTF-8')
+    data = infile.readline()
+    data = infile.readlines()
+    for i in range( (len(data)-1) ):
+        print(data[i])
+        print()
     pass
 
 def Del_Dish(menu, ID_list):
